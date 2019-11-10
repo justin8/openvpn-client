@@ -13,6 +13,4 @@ COPY openvpn.sh /usr/bin/
 HEALTHCHECK --interval=60s --timeout=15s --start-period=120s \
              CMD curl -L 'https://api.ipify.org'
 
-VOLUME ["/vpn"]
-
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/openvpn.sh"]
